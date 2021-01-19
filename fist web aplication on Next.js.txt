@@ -1,0 +1,5 @@
+- Para instalar o next.js precisamos do node.js, abrimos o terminal, escolhemos um diretório e escrevemos o comado npx create-next-app nextjs-blog
+- O comando npx executa o Package runner(Executa as bibliotecas que podem ser baixadas do site npmjs) do NPM, essas bibliotecas ficam em um banco de dados chamado NPM registry.
+- NPM ja vem instalado junto ao Node.js, com o NPM instalamos e desinstalamos bibliotecas de um projeto ou da máquina.
+- Apos criarmos o modelo base, escolhemos o diretorio do projeto e usamos o comando npm run dev para executar o servidor Next.js
+- Para linkar páginas, caso não queira mudar o estilo das páginas, importamos a biblioteca Link de next/link usamos o comando <Link href="diretório">, assim linkamos as pagina sem perder o estilo.
