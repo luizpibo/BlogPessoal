@@ -50,3 +50,11 @@
 .lightText{
     color: #999;
 }
+
+.botaoGit{
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    ruby-align: center;
+}

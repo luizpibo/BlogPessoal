@@ -10,11 +10,20 @@ function Home() {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Sou programador e estou me graduando em Ciência da computação na Universidade católica de brasília</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://instagram.com/luizpibo2">instagram</a>.)
-        </p>
+        <a href="https://instagram.com/luizpibo2">
+          <p>
+            Meu instagram
+          </p>
+        </a>
       </section>
+      <footer>
+        <span itemID='botaoGit'>
+          <a href="https://github.com/luizpibo">
+            <img src="/images/logoGit.png">
+            </img>
+          </a>
+        </span>
+      </footer>
     </Layout>
   )
 }
