@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "run dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "next dev",
   },
   "dependencies": {
     "classnames": "^2.2.6",
