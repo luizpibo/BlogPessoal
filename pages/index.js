@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout, { siteTitle } from './components/layout'
 import utilStyles from './styles/utils.module.css'
 
@@ -19,11 +20,16 @@ function Home() {
       <footer>
         <span itemID='botaoGit'>
           <a href="https://github.com/luizpibo">
-            <img src="/images/logoGit.png">
-            </img>
+            <img src="/images/logoGit.png"/>
+          </a>
+        </span>
+        <span>
+          <a href="posts/relatorioViagem">
+            <img src="/images/logoTecno.png"/>
           </a>
         </span>
       </footer>
+
     </Layout>
   )
 }

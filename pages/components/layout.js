@@ -8,7 +8,7 @@ import Link from 'next/link'
 const name = 'Luiz Fernando'
 
 //Titulo padrão para os sites
-export const siteTitle = 'Luiz Fernando'
+export const siteTitle = name
 
 //Criando uma função default que recebe um children e um home 
 export default function Layout({ children, home }) {
