@@ -1,8 +1,9 @@
+/*
 class ProductCategoryRow extends React.Component {
     render() {
       const category = this.props.category;
-      return /*#__PURE__*/(
-        React.createElement("tr", null, /*#__PURE__*/
+      return (
+        React.createElement("tr", null, 
         React.createElement("th", { colSpan: "2" },
         category)));
   
@@ -15,14 +16,14 @@ class ProductCategoryRow extends React.Component {
     render() {
       const product = this.props.product;
       const name = product.stocked ?
-      product.name : /*#__PURE__*/
+      product.name : 
       React.createElement("span", { style: { color: 'red' } },
       product.name);
   
   
-      return /*#__PURE__*/(
-        React.createElement("tr", null, /*#__PURE__*/
-        React.createElement("td", null, name), /*#__PURE__*/
+      return (
+        React.createElement("tr", null, 
+        React.createElement("td", null, name),
         React.createElement("td", null, product.price)));
   
   
@@ -36,13 +37,13 @@ class ProductCategoryRow extends React.Component {
   
       this.props.products.forEach(product => {
         if (product.category !== lastCategory) {
-          rows.push( /*#__PURE__*/
+          rows.push( 
           React.createElement(ProductCategoryRow, {
             category: product.category,
             key: product.category }));
   
         }
-        rows.push( /*#__PURE__*/
+        rows.push( 
         React.createElement(ProductRow, {
           product: product,
           key: product.name }));
@@ -50,12 +51,12 @@ class ProductCategoryRow extends React.Component {
         lastCategory = product.category;
       });
   
-      return /*#__PURE__*/(
-        React.createElement("table", null, /*#__PURE__*/
-        React.createElement("thead", null, /*#__PURE__*/
-        React.createElement("tr", null, /*#__PURE__*/
-        React.createElement("th", null, "Name"), /*#__PURE__*/
-        React.createElement("th", null, "Price"))), /*#__PURE__*/
+      return (
+        React.createElement("table", null, 
+        React.createElement("thead", null, 
+        React.createElement("tr", null, 
+        React.createElement("th", null, "Name"), 
+        React.createElement("th", null, "Price"))), 
   
   
         React.createElement("tbody", null, rows)));
@@ -66,10 +67,10 @@ class ProductCategoryRow extends React.Component {
   
   class SearchBar extends React.Component {
     render() {
-      return /*#__PURE__*/(
-        React.createElement("form", null, /*#__PURE__*/
-        React.createElement("input", { type: "text", placeholder: "Search..." }), /*#__PURE__*/
-        React.createElement("p", null, /*#__PURE__*/
+      return (
+        React.createElement("form", null, 
+        React.createElement("input", { type: "text", placeholder: "Search..." }), 
+        React.createElement("p", null, 
         React.createElement("input", { type: "checkbox" }),
         ' ', "Only show products in stock")));
   
@@ -81,9 +82,9 @@ class ProductCategoryRow extends React.Component {
   
   class FilterableProductTable extends React.Component {
     render() {
-      return /*#__PURE__*/(
-        React.createElement("div", null, /*#__PURE__*/
-        React.createElement(SearchBar, null), /*#__PURE__*/
+      return (
+        React.createElement("div", null, 
+        React.createElement(SearchBar, null), 
         React.createElement(ProductTable, { products: this.props.products })));
   
   
@@ -100,6 +101,7 @@ class ProductCategoryRow extends React.Component {
   { category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7' }];
   
   
-  ReactDOM.render( /*#__PURE__*/
+  ReactDOM.render( 
   React.createElement(FilterableProductTable, { products: PRODUCTS }),
   document.getElementById('container'));
+  */
