@@ -16,9 +16,9 @@ function Home() {
             Meu instagram
           </p>
         </Link>
-        <Link href="posts/first-post">
+        <Link href="posts/jogoDaVelha">
           <p>
-            Relatório
+            Jogo da velha
           </p>
         </Link>
       </section>
