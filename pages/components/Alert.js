@@ -1,3 +1,4 @@
+/*
 import styles from '../styles/alert.modules.css'
 import cn from 'classnames'
 
@@ -13,3 +14,4 @@ export default function Alert({ children, type }) {
         </div>
     )
 }
+*/

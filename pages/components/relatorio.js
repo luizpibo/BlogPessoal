@@ -1,5 +1,6 @@
 //"SWR" deriva de stale-while-revalidate, é uma estratégia para primeiro retornar os dados do cache
 //os componentes eceberão um flux de atualização de dados constante e automaticamente
+/*
 import React from 'react'
 import useSWR from 'swr'
 import reactTable from 'react-table'
@@ -53,3 +54,4 @@ export default class Form extends React.Component {
         )
     }
 }
+*/
