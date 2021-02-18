@@ -27,11 +27,10 @@ export default function Layout({ children, home }) {
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        
+        <meta lang="pt-br"/>
         <meta
           name="luiz fernando"
           content="Aprendendo a construir um site pessoal usando Next.js"/>
-        
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(

@@ -1,4 +1,5 @@
 import React from 'react';
+import utilStyles from '../styles/utils.module.css'
 
 /*
 // Criando a Classe square herdando um React component 
@@ -31,25 +32,25 @@ class Square extends React.Component {
 
 function Square(props) {
     return (
-        <button className="square" onClick={props.onClick}>
+        <button className={utilStyles.square} onClick={props.onClick}>
             {props.value}
         </button>
     )
 }
 //Cliando classe do tabuleiro
 class Board extends React.Component {
-    //Metodo renderiza um quadrado e passa o valor de prop chamando value para o quadrado
-    /*
-    constructor(props) {
-        super(props);
-        this.state = {
-            squares: Array(9).fill(null),
-            xIsNext: true,
-        };
-    }
-    */
-    
-    //Função responsável por passar duas props do tabuleiro para o quadrado
+//Metodo renderiza um quadrado e passa o valor de prop chamando value para o quadrado
+/*
+constructor(props) {
+    super(props);
+    this.state = {
+        squares: Array(9).fill(null),
+        xIsNext: true,
+    };
+}
+*/
+
+//Função responsável por passar duas props do tabuleiro para o quadrado
     renderSquare(i) {
         return (
             <Square 
@@ -72,19 +73,19 @@ class Board extends React.Component {
         */
         return (
             <div>
-                <div className="board-row">
+                <div className={utilStyles.boardRow}>
                     {this.renderSquare(0)}
                     {this.renderSquare(1)}
                     {this.renderSquare(2)}
                 </div>
 
-                <div className="board-row">
+                <div className={utilStyles.boardRow}>
                     {this.renderSquare(3)}
                     {this.renderSquare(4)}
                     {this.renderSquare(5)}
                 </div>
 
-                <div className="board-row">
+                <div className={utilStyles.boardRow}>
                     {this.renderSquare(6)}
                     {this.renderSquare(7)}
                     {this.renderSquare(8)}
@@ -98,16 +99,21 @@ class Game extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            history: [{
-                squares: Array(9).fill(null),
-            }],
+            history: [
+                {
+                    squares: Array(9).fill(null),
+                }
+            ],
+            stepNumber: 0,
             xIsNext: true,
-        }
+        };
     }
+
+    // Função que é executada quando clicamos em algum quadrado
     // Usamos o slice() para criar uma cópia do array de quadrados
     // Agora os Squares são Componentes controlados (controlled components) onde o board terá controle total sobre eles
     handleClick(i) {
-        const history = this.state.history;
+        const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
         if (calculateWinner(squares) || squares[i]) {
@@ -118,20 +124,36 @@ class Game extends React.Component {
             history: history.concat([{
                 squares: squares,
             }]),
+            stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
         });
     }
+
+    // 
+    jumpTo(step){
+        this.setState({
+            stepNumber: step,
+            xIsNext: (step % 2) === 0,
+        });
+    }
     render() {
+        // Historico de jogadas 
         const history = this.state.history;
-        const current = history[history.length - 1];
+        // Quadrado que foi clicado
+        const current = history[this.state.stepNumber];
+        // Armazena se houve ganhador na jogada
         const winner = calculateWinner(current.squares);
 
+        /** mapa de jogadas
+         * retorna uma lista ordenada com botões com as posições jogadas
+         */
         const moves = history.map((step, move) => {
             const desc = move ?
                 'Go to move #' + move :
                 'Go to game start';
+
             return (
-                <li>
+                <li key={move}>
                     <button onClick={() => this.jumpTo(move)}>{desc}</button>
                 </li>
             );
@@ -144,7 +166,7 @@ class Game extends React.Component {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
         }
         return (
-            <div className="game">
+            <div className={utilStyles.game}>
                 <div className="game-board"> 
                     <Board 
                         squares={current.squares}
@@ -152,7 +174,7 @@ class Game extends React.Component {
                     />
                 </div>
 
-                <div className="game-info">
+                <div className={utilStyles.gameInfo}>
                     <div>{status}</div>
                     <ol>{moves}</ol>
                 </div>
