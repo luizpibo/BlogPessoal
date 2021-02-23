@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import Layout from '../components/layout'
+import Relatorio from '../components/corpoRelatrio';
 
 export default function FirstPost(){
     return (
@@ -8,12 +9,11 @@ export default function FirstPost(){
         <Head>
             <title> Fist Post</title>
         </Head>
-        <h1> First Post</h1>
-        <h2>
-            <Link href="/">
-                <a>Back to home</a>
-            </Link>
-        </h2>
+            <Relatorio
+                quantidadeLinhas={10}
+            >
+
+            </Relatorio>
         </Layout>
     )
 }

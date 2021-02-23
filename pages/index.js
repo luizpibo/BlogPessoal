@@ -21,6 +21,11 @@ function Home() {
             Jogo da velha
           </p>
         </Link>
+        <Link href="posts/first-post">
+          <p>
+            Relatório
+          </p>
+        </Link>
       </section>
       <footer>
         <span itemID='botaoGit'>

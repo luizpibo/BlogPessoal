@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react';
+import { render } from 'react-dom';
 //import utilStyles from '../styles/relatorios.css'
 
 /*
@@ -32,7 +33,28 @@ class NameForm extends React.Component{
     }
 }
 */
-function Campo(){
+
+//Vai conter os componentes da pagina
+class meuApp extends React.Component {
+    renderForm(){
+        return (
+            <GerarRel 
+                value={10}
+            />
+        );
+    }
+    render(){
+        return(
+            <div className="corpoPagina">
+                {this.renderForm}
+            </div>
+            
+        );
+    }
+}
+
+//Função que retorna um campo de formulário
+export default function Campo(){
     return(
         <tr>
             <td>
@@ -54,12 +76,24 @@ function Campo(){
         </tr>
     );
 }
-function gerarRel(){
+
+//Função que recebe o numero de notas e gera um relatório
+function GerarRel(props){
     var rows = [];
-    for(var i = 0; i<10; i++){
+    for(var i = 0; i<props.value; i++){
         rows.push(Campo());
     }
-    return <body>{rows}</body>;
+    return <div>{rows}</div>;
+}
+
+function SolicitarQtd(){
+        return (
+            <body>
+                Quantidade de notas<br/>
+                <input type="number" min="1" step="any"></input>
+                <button onClick=""></button>
+            </body>
+        )
 }
 
 function Form() {
@@ -96,4 +130,3 @@ function Form() {
         </form>
     )
 }
-export default gerarRel;
