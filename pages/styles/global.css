@@ -15,20 +15,20 @@ ol, ul{
 }
 
 p{
-  background-color: blue;
+  background-color: rgb(0, 0, 200);
   padding: 10px;
   border-radius: 10px;
   text-align: center;
   height: auto;
   -webkit-box-align: start;
   vertical-align: bottom;
-  
+  animation: 2s linear 0s infinite normal none running;
 }
 
 p:hover{
-  background-color: rgb(0, 0, 200);
+  background-color: rgb(0, 0, 255);
   border-radius: 30px;
-  color: chartreuse;
+  
 }
 
 img {
