@@ -11,14 +11,12 @@ function Home() {
       </Head>
 
       <section className={utilStyles.headingMd}>
-<<<<<<< Updated upstream
         <p>Sou programador e estou me graduando em Ciência da computação na Universidade católica de brasília</p>
         <a href="https://instagram.com/luizpibo2">
           <p>
             Meu instagram
           </p>
         </a>
-=======
         <ul className={utilStyles.buttonsGrid}>
           <li>
             <article className={utilStyles.article}>
@@ -64,7 +62,6 @@ function Home() {
             </article>
           </li>
         </ul>
->>>>>>> Stashed changes
       </section>
       <footer>
         <span itemID='botaoGit'>
